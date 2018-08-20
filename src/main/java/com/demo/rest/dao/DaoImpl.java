@@ -37,6 +37,17 @@ public class DaoImpl implements Dao {
 		}
 		
 	}
+
+	@Override
+	public void deleteCustomer(int customerId) {
+		for(Customer cust: customerMap.values()) {
+			if(cust.getCustomerId() == customerId) {
+				System.out.println(cust + "is the cust to be deleted");
+				customerMap.remove(cust.getCustomerId());
+			}
+		}
+		
+	}
 	
 	
 

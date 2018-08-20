@@ -16,24 +16,29 @@ import com.demo.rest.service.ServiceImpl;
 public class Demo {
 
 	@Autowired
-	ServiceImpl service; //= new ServiceImpl();
+	ServiceImpl service; // = new ServiceImpl();
 
-	@RequestMapping(value = "/customer/add", method = RequestMethod.POST, consumes="application/json")
+	@RequestMapping(value = "/customer/add", method = RequestMethod.POST, consumes = "application/json")
 	public void addCustomer(@RequestBody Customer customer) {
 		System.out.println(customer);
 		service.addCustomer(customer);
 	}
 
-	@RequestMapping(value = "/customers", method = RequestMethod.GET, produces=MediaType.ALL_VALUE)
+	@RequestMapping(value = "/customers", method = RequestMethod.GET, produces = MediaType.ALL_VALUE)
 	public Collection<Customer> viewAllCustomers() {
 		return service.viewAllCustomers();
 	}
-	
-	@RequestMapping(value = "/customer/update", method = RequestMethod.PUT, consumes="application/json")
-	public void updateCustomer( int id, @RequestBody  Customer customer) {
+
+	@RequestMapping(value = "/customer/update", method = RequestMethod.PUT, consumes = "application/json")
+	public void updateCustomer(int id, @RequestBody Customer customer) {
 		System.out.println(customer);
 		service.updateCustomer(customer);
 	}
-	
+
+	@RequestMapping(value = "/customer/delete", method = RequestMethod.DELETE)
+	public void deleteCustomer(int customerId) {
+
+		service.deleteCustomer(customerId);
+	}
 
 }

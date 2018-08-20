@@ -32,4 +32,10 @@ public class ServiceImpl implements Service {
 		
 	}
 
+	@Override
+	public void deleteCustomer(int customerId) {
+		dao.deleteCustomer(customerId);
+		
+	}
+
 }

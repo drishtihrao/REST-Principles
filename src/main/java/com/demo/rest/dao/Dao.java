@@ -8,4 +8,5 @@ public interface Dao {
 	void addCustomer(Customer customer);
 	Collection<Customer> viewAllCustomers();
 	void updateCustomer(Customer customer);
+	void deleteCustomer(int customerId);
 }
